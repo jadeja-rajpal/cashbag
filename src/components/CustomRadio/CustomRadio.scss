@@ -1,0 +1,12 @@
+.custom-radio-wrapper {
+  .radio-label {
+      margin-bottom: 0px;
+    }
+  .MuiRadio-colorSecondary.Mui-checked {
+      color: orange;
+  }
+  .MuiFormLabel-root.Mui-focused {
+      color: orange;
+  }
+  margin: 10px 0px !important;
+}

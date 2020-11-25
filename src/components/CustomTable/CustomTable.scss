@@ -1,0 +1,282 @@
+.CustomTable {
+  min-height: 380px;
+  position: relative;
+  overflow-x: auto; //allows the div to scroll horizontally only when the div overflows.
+
+  .MuiPaper-elevation1 {
+    box-shadow: none;
+  }
+
+  .MuiTableContainer-root {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .MuiTableRow-head {
+    position: relative;
+
+    &:after {
+      top: 37px;
+      width: calc(100% - 50px);
+      position: absolute;
+      height: 1px;
+      bottom: 0px;
+      left: 20px;
+    }
+  }
+  .total-count{
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid transparent;
+  }
+
+  thead {
+    padding: 10px;
+
+    th {
+      text-align-last: left;
+      font-size: 14px;
+      line-height: 1.21;
+      padding: 10px 5px 6px;
+      padding-right: 2px;
+      border-bottom: 1px solid white;
+      background-color: orange;
+      height: 34px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      letter-spacing: normal;
+      white-space: nowrap;
+      &:first-child {
+        font-weight: 600;
+        padding-left: 5px;
+      }
+    }
+    tr th &:last-child {
+      font-weight: 600;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+  }
+
+  tbody {
+    tr {
+      height: 42px;
+      text-align-last: left;
+      color: #969699;
+      padding-left: 5px;
+      .ant-select-enabled {
+        background: #f2f3f5;
+      }
+
+      td {
+        background: #fff;
+        white-space: nowrap;
+        color: #363b4e;
+        text-align: left;
+      }
+
+      &:nth-child(odd) td {
+        background: #f2f3f5;
+      }
+    }
+
+    td {
+      padding: 10px 5px 6px;
+      padding-right: 2px;
+      background: #fff;
+      height: 14px;
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.17;
+      letter-spacing: normal;
+      text-align-last: left;
+      color: var(--faded-blue);
+
+      .custom-table-select {
+        width: 115px;
+        display: inline-block;
+        position: relative;
+
+        &:after {
+          border: solid #363b4e;
+          border-width: 0 2px 2px 0;
+          padding: 3px;
+          display: inline-block;
+          content: "";
+          transform: rotate(45deg);
+          position: absolute;
+          right: 2px;
+          top: 10px;
+          pointer-events: none;
+        }
+
+        select {
+          width: 100%;
+          height: 30px;
+          padding: 0 15px 0 0;
+          outline: none;
+          border: none;
+          -webkit-appearance: none;
+          background: none;
+          color: rgba(0, 0, 0, 0);
+          text-shadow: 0 0 0 #363b4e;
+          text-overflow: ellipsis;
+
+          option {
+            color: #363b4e;
+            padding: 0;
+          }
+        }
+
+        &.error {
+          select {
+            padding-left: 5px;
+            border: 1px solid #ff0000;
+            border-radius: 4px;
+          }
+
+          &:after {
+            right: 7px;
+          }
+        }
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+
+    .disabled-input-field {
+      .custom-table-select {
+        select {
+          padding-right: 0;
+        }
+
+        &:after {
+          content: none;
+        }
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        border: none;
+        background: transparent;
+        padding: 0;
+        color: #363b4e;
+      }
+    }
+  }
+
+  .more-items {
+    button {
+      margin-left: 5px;
+      padding: 0 2px;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      i {
+        font-size: 18px;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.table-sort-icon-wrapper {
+  padding-left: 10px;
+  .table-sort-icon {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.table-header-bold {
+  font-weight: 600;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.table-no-table {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -12px;
+  margin-left: -124px;
+}
+
+.MuiTableCell-root.MuiTableCell-head.MuiTableCell-sizeSmall.MuiTableCell-stickyHeader {
+  position: static;
+}
+
+// TODO: Right align icons
+// .CustomTable tbody td:last-child {
+//   text-align: right;
+//   display: flex;
+//   align-items: center;
+//   height: 29px;
+//   justify-content: flex-end;
+//   padding-right: 8px;
+// }
+// .CustomTable thead th:last-child {
+//   justify-content: flex-end;
+//   display: flex;
+//   margin: auto;
+// }
+//   .MuiTableCell-sizeSmall:last-child span.table-header-bold {
+//     text-align: right;
+//     display: flex !important;
+//     align-items: center;
+//     justify-content: flex-end;
+//     padding-right: 130px;
+//     }
+@media print {
+  body {
+    visibility: hidden;
+  }
+  body * {
+    visibility: hidden;
+  }
+  th,
+  td {
+    margin: 10px;
+  }
+  .print {
+    visibility: visible;
+  }
+  .print * {
+    visibility: visible !important;
+  }
+  // todo reset position of table gloablly
+  // .Toolbar-wrapper {
+  //   height: 0px;
+  // }
+}
+
+.cellWidth {
+  min-width: 60px;
+  word-wrap: break-word;
+}

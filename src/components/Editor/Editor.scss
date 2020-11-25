@@ -1,0 +1,12 @@
+.ck-editor-wrapper {
+  margin: 10px 0px;
+  overflow-y: hidden;
+}
+.ck.ck-editor {
+  position: relative;
+  overflow: hidden;
+}
+.ck.ck-editor__main > .ck-editor__editable {
+  border-color: var(--ck-color-base-border);
+  height: 152px;
+}
